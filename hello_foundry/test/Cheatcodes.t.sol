@@ -43,7 +43,8 @@ contract OwnerUpOnlyTest is Test {
     OwnerUpOnly upOnly;
 
 
-    function testFailIncrementAsNotOwner() public {
+    function testIncrementAsNotOwner() public {
+        vm.expectRevert(Unauthorized.selector);
         vm.prank(address(0));
         upOnly.increment();
     }
