@@ -7,7 +7,8 @@ import "forge-std/Test.sol";
 contract ForkTest is Test {
     uint256 mainnetFork;
     uint256 optimismFork;
-
+    string MAINNET_RPC_URL = vm.envString("MAINNET_RPC_URL");
+    string OPTIMISM_RPC_URL = vm.envString("OPTIMISM_RPC_URL");
 
     function setUp() public {
         mainnetFork = vm.createFork(MAINNET_RPC_URL);
